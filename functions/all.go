@@ -10,7 +10,7 @@ func ReadActions(graphClient *msgraphsdk.GraphServiceClient, c config.Config) {
 	GetAdmin(graphClient, c)
 	GetDefaultGroup(graphClient, c)
 	GetDefaultSite(graphClient, c)
-	//BreakTime()
+	BreakTime()
 	GetAdminCalendar(graphClient, c)
 	GetAdminOnedrive(graphClient, c)
 	GetAdminEmail(graphClient, c)
@@ -20,7 +20,7 @@ func ReadActions(graphClient *msgraphsdk.GraphServiceClient, c config.Config) {
 // WriteActions contains all write actions
 func WriteActions(graphClient *msgraphsdk.GraphServiceClient, c config.Config) {
 	WriteEmailDraft(graphClient, c)
-	//BreakTime()
+	BreakTime()
 	DeleteEmailDraft(graphClient, c)
 }
 
@@ -28,6 +28,6 @@ func WriteActions(graphClient *msgraphsdk.GraphServiceClient, c config.Config) {
 func ActionList(graphClient *msgraphsdk.GraphServiceClient, c config.Config) {
 	// Notice: Read can't get you renewed nowadays, you need to write stuff.
 	ReadActions(graphClient, c)
-	//BreakTime()
+	BreakTime()
 	WriteActions(graphClient, c)
 }
