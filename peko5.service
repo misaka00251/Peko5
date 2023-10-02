@@ -1,0 +1,13 @@
+[Unit]
+Description=Peko5 daemon for your subscription. PekoPekoPekoPeko!
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/your/path/to/peko5
+
+[Install]
+WantedBy=multi-user.target
