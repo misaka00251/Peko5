@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"os"
 )
 
@@ -19,7 +20,7 @@ var config Config
 func ReadConfigFile(fileName string) Config {
 	jsonFile, err := os.Open(fileName)
 	if err != nil {
-		fmt.Println("Please create a config file first.")
+		log.Fatal("Please create a config file first.")
 	}
 
 	byteValue, _ := io.ReadAll(jsonFile)

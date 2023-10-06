@@ -6,6 +6,7 @@ import (
 	"fmt"
 	msgraphsdk "github.com/microsoftgraph/msgraph-sdk-go"
 	graphmodels "github.com/microsoftgraph/msgraph-sdk-go/models"
+	"log"
 	"time"
 )
 
@@ -42,7 +43,7 @@ If you see this mail in your inbox, you should ignore and delete it. <br>
 
 	messages, err := graphClient.Users().ByUserId(c.AdminID).Messages().Post(context.Background(), requestBody, nil)
 	if err != nil {
-		fmt.Printf("Error creating message: %v\n", err)
+		log.Fatalf("Error creating message: %v\n", err)
 		return
 	}
 	fmt.Printf("Message ID: %v\n", *messages.GetId())
@@ -52,7 +53,7 @@ If you see this mail in your inbox, you should ignore and delete it. <br>
 func DeleteEmailDraft(graphClient *msgraphsdk.GraphServiceClient, c config.Config) {
 	err := graphClient.Users().ByUserId(c.AdminID).Messages().ByMessageId(deleteEmailID).Delete(context.Background(), nil)
 	if err != nil {
-		fmt.Printf("Error deleting message: %v\n", err)
+		log.Fatalf("Error deleting message: %v\n", err)
 		return
 	}
 	fmt.Println("Message deleted.")

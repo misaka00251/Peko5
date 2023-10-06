@@ -4,7 +4,6 @@ go 1.21
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.3.1
-	github.com/microsoftgraph/msgraph-beta-sdk-go v0.80.0
 	github.com/microsoftgraph/msgraph-sdk-go v1.19.0
 )
 
